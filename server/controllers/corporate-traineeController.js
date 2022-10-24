@@ -29,13 +29,16 @@ const getCorporateTrainee = async (req, res) => {
 
 // create a new corporate trainee
 const createCorporateTrainee = async (req, res) => {
-	const { username, password } = req.body;
+	const { username, password, email, country, courses } = req.body;
 
 	// add to the database
 	try {
 		const corporateTrainee = await CorporateTrainee.create({
 			username,
 			password,
+			email,
+			country,
+			courses,
 		});
 		res.status(200).json(corporateTrainee);
 	} catch (error) {
