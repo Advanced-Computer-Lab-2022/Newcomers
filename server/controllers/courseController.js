@@ -2,7 +2,7 @@ const Instructor = require("../models/instructorModel");
 const Course = require("../models/courseModel");
 const mongoose = require("mongoose");
 
-// get a single instructor
+// Get a single course
 const getCourse = async (req, res) => {
 	if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
 		return res.status(404).json({ error: "No such instructor" });
